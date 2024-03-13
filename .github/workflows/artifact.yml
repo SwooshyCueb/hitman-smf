@@ -103,7 +103,7 @@ jobs:
           robocopy ./Third-Party ./dist/Third-Party /COPYALL /E; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
           robocopy "./For Build" ./dist /COPYALL /E; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
           robocopy ./docs ./dist/Info /COPYALL /E; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
-          robocopy ./compiled ./dist/API /COPYALL /E *.d.ts; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
+          robocopy ./compiled ./dist/API /COPYALL /E; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
           robocopy ".\Mod Manager\dist\win-unpacked" "./dist/Mod Manager" /COPYALL /E; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
           copy Deploy.exe dist
           New-Item -Path dist -Name "Mod Manager.cmd" -ItemType "file" -Value "@echo off`ncd `"Mod Manager`"`nstart `"`" `"Mod Manager.exe`""
