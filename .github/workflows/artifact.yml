@@ -62,6 +62,7 @@ jobs:
           robocopy ./piscina ./node_modules/piscina /COPYALL /E /is /it; if ($lastexitcode -lt 8) { $global:LASTEXITCODE = $null }
           tsc
           copy ./src/smf-rust.node ./compiled/smf-rust.node
+          copy ./src/smf-rust.d.ts ./compiled/smf-rust.d.ts
           pkg package.json --targets win-x64 --output Deploy.exe --compress Brotli
 
       - name: Download RPKG
