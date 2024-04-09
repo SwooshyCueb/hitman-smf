@@ -63,7 +63,7 @@ jobs:
           tsc
           copy ./src/smf-rust.node ./compiled/smf-rust.node
           copy ./src/smf-rust.d.ts ./compiled/smf-rust.d.ts
-          pkg package.json --targets win-x64 --output Deploy.exe --compress Brotli
+          pkg package.json --targets win-x64 --output Deploy.exe --no-bytecode --public-packages '*' --public
 
       - name: Ready for zip
         run: |
