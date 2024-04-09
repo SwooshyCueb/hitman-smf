@@ -33,7 +33,9 @@ const deepMerge = function (x: any, y: any) {
 
 const execCommand = function (command: string) {
 	void logger.verbose(`Executing command ${command}`)
-	child_process.execSync(command, { stdio: ["pipe", "pipe", "inherit"] })
+	//child_process.execSync(command, { stdio: ["pipe", "pipe", "inherit"] })
+	// I don't know why, but this fixes the deadlocks that happen sometimes in proton
+	child_process.execSync(command, { stdio: ["ignore", "inherit", "inherit"] })
 }
 
 const callRPKGFunction = async function (command: string) {
