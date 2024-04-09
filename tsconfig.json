@@ -14,7 +14,8 @@
         "noEmitHelpers": true,
         "importHelpers": true,
         "declaration": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "ignoreDeprecations": "5.0"
     },
     "include": [
         "./src/**/*"
